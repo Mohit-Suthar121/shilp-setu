@@ -1,18 +1,85 @@
 export const LANGUAGES = [
-  { code: "hi", label: "हिन्दी", en: "Hindi" },
-  { code: "en", label: "English", en: "English" },
-  { code: "bn", label: "বাংলা", en: "Bengali" },
-  { code: "mr", label: "मराठी", en: "Marathi" },
-  { code: "te", label: "తెలుగు", en: "Telugu" },
-  { code: "ta", label: "தமிழ்", en: "Tamil" },
-  { code: "gu", label: "ગુજરાતી", en: "Gujarati" },
-  { code: "kn", label: "ಕನ್ನಡ", en: "Kannada" },
-  { code: "ml", label: "മലയാളം", en: "Malayalam" },
-  { code: "pa", label: "ਪੰਜਾਬੀ", en: "Punjabi" },
-  { code: "or", label: "ଓଡ଼ିଆ", en: "Odia" },
-  { code: "as", label: "অসমীয়া", en: "Assamese" },
-  { code: "ur", label: "اردو", en: "Urdu" },
-  { code: "mai", label: "मैथिली", en: "Maithili" },
+  {
+    code: "hi", label: "हिन्दी", en: "Hindi",
+    greeting: "नमस्कार! उद्योग में आपका स्वागत है।",
+    aliases: ["hindi", "हिंदी", "हिन्दी"],
+  },
+  {
+    code: "en", label: "English", en: "English",
+    greeting: "Welcome! Glad to have you here.",
+    aliases: ["english", "angrezi", "अंग्रेजी"],
+  },
+  {
+    code: "bn", label: "বাংলা", en: "Bengali",
+    greeting: "নমস্কার! আপনাকে স্বাগতম।",
+    aliases: ["bengali", "bangla", "বাংলা"],
+  },
+  {
+    code: "mr", label: "मराठी", en: "Marathi",
+    greeting: "नमस्कार! आपले स्वागत आहे।",
+    aliases: ["marathi", "मराठी"],
+  },
+  {
+    code: "te", label: "తెలుగు", en: "Telugu",
+    greeting: "నమస్కారం! మీకు స్వాగతం.",
+    aliases: ["telugu", "తెలుగు"],
+  },
+  {
+    code: "ta", label: "தமிழ்", en: "Tamil",
+    greeting: "வணக்கம்! உங்களை வரவேற்கிறோம்.",
+    aliases: ["tamil", "தமிழ்"],
+  },
+  {
+    code: "gu", label: "ગુજરાતી", en: "Gujarati",
+    greeting: "નમસ્તે! આપનું સ્વાગત છે.",
+    aliases: ["gujarati", "ગુજરાતી"],
+  },
+  {
+    code: "kn", label: "ಕನ್ನಡ", en: "Kannada",
+    greeting: "ನಮಸ್ಕಾರ! ಸ್ವಾಗತ.",
+    aliases: ["kannada", "ಕನ್ನಡ"],
+  },
+  {
+    code: "ml", label: "മലയാളം", en: "Malayalam",
+    greeting: "നമസ്കാരം! സ്വാഗതം.",
+    aliases: ["malayalam", "മലയാളം"],
+  },
+  {
+    code: "pa", label: "ਪੰਜਾਬੀ", en: "Punjabi",
+    greeting: "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ! ਜੀ ਆਇਆਂ ਨੂੰ।",
+    aliases: ["punjabi", "ਪੰਜਾਬੀ"],
+  },
+  {
+    code: "or", label: "ଓଡ଼ିଆ", en: "Odia",
+    greeting: "ନମସ୍କାର! ଆପଣଙ୍କୁ ସ୍ୱାଗତ।",
+    aliases: ["odia", "oriya", "ଓଡ଼ିଆ"],
+  },
+  {
+    code: "as", label: "অসমীয়া", en: "Assamese",
+    greeting: "নমস্কাৰ! আপোনাক স্বাগতম।",
+    aliases: ["assamese", "axomiya", "অসমীয়া"],
+  },
+  {
+    code: "ur", label: "اردو", en: "Urdu",
+    greeting: "خوش آمدید! آپ کا استقبال ہے۔",
+    aliases: ["urdu", "اردو"],
+  },
+  {
+    code: "mai", label: "मैथिली", en: "Maithili",
+    greeting: "प्रणाम! अहाँक स्वागत अछि।",
+    aliases: ["maithili", "मैथिली"],
+  },
+];
+
+export const CRAFTS = [
+  { name: "Blue Pottery",  icon: "🏺", aliases: ["blue pottery", "ब्लू पॉटरी", "नीली मिट्टी"] },
+  { name: "Madhubani",     icon: "🎨", aliases: ["madhubani", "मधुबनी", "mithila"] },
+  { name: "Terracotta",    icon: "🪔", aliases: ["terracotta", "टेराकोटा", "मिट्टी"] },
+  { name: "Kantha",        icon: "🧵", aliases: ["kantha", "कांथा", "kantha"] },
+  { name: "Dokra",         icon: "🔔", aliases: ["dokra", "डोकरा"] },
+  { name: "Pattachitra",   icon: "🖼️", aliases: ["pattachitra", "पट्टचित्र"] },
+  { name: "Bamboo",        icon: "🎍", aliases: ["bamboo", "बांस"] },
+  { name: "Block Print",   icon: "🖨️", aliases: ["block print", "ब्लॉक प्रिंट", "block printing"] },
 ];
 
 export type Product = {
