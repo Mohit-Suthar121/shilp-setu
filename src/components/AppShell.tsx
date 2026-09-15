@@ -11,7 +11,6 @@ import {
   Volume2,
   User,
   ShoppingBag,
-  
   Handshake,
   Store,
 } from "lucide-react";
@@ -30,7 +29,7 @@ const NAV = [
 const MORE = [
   { to: "/orders", label: "Orders", icon: ShoppingBag },
   { to: "/bulk", label: "Bulk deals", icon: Handshake },
-  
+
   { to: "/market", label: "Buyer view", icon: Store },
   { to: "/profile", label: "Profile", icon: User },
 ] as const;
@@ -45,8 +44,12 @@ export function OfflineBar() {
       )}
     >
       {online ? <Cloud className="size-4 shrink-0" /> : <CloudOff className="size-4 shrink-0" />}
-      <span>{online ? "Online — safe to sync" : "Working offline — everything is saved on your phone"}</span>
-      <span className="rounded-full bg-background/70 px-2 py-0.5 text-foreground">{queue.length} waiting</span>
+      <span>
+        {online ? "Online — safe to sync" : "Working offline — everything is saved on your phone"}
+      </span>
+      <span className="rounded-full bg-background/70 px-2 py-0.5 text-foreground">
+        {queue.length} waiting
+      </span>
       <span className="text-muted-foreground">Last sync: {lastSync}</span>
       <div className="ml-auto flex items-center gap-2">
         {online && queue.length > 0 && (
@@ -86,7 +89,15 @@ export function SpeakButton({ text, label = "Listen" }: { text: string; label?: 
   );
 }
 
-export function Section({ title, action, children }: { title: string; action?: ReactNode; children: ReactNode }) {
+export function Section({
+  title,
+  action,
+  children,
+}: {
+  title: string;
+  action?: ReactNode;
+  children: ReactNode;
+}) {
   return (
     <section className="space-y-3">
       <div className="flex items-center justify-between gap-3">
@@ -98,7 +109,15 @@ export function Section({ title, action, children }: { title: string; action?: R
   );
 }
 
-export function AppShell({ title, subtitle, children }: { title: string; subtitle?: string; children: ReactNode }) {
+export function AppShell({
+  title,
+  subtitle,
+  children,
+}: {
+  title: string;
+  subtitle?: string;
+  children: ReactNode;
+}) {
   const path = useRouterState({ select: (s) => s.location.pathname });
   const { profile } = useApp();
 
@@ -108,7 +127,11 @@ export function AppShell({ title, subtitle, children }: { title: string; subtitl
         <aside className="hidden lg:block lg:w-60 lg:shrink-0">
           <div className="sticky top-6 space-y-1 rounded-3xl border border-border bg-card p-3">
             <div className="flex items-center gap-3 px-3 py-3">
-              <img src="/shilpsetu-logo.jpg" alt="ShilpSetu Logo" className="size-11 rounded-2xl object-cover" />
+              <img
+                src="/shilpsetu-logo.jpg"
+                alt="ShilpSetu Logo"
+                className="size-11 rounded-2xl object-cover"
+              />
               <div>
                 <p className="font-display text-lg font-bold text-primary">SHILPSETU</p>
                 <p className="text-xs text-muted-foreground">Offline-first business manager</p>
@@ -120,7 +143,9 @@ export function AppShell({ title, subtitle, children }: { title: string; subtitl
                 to={n.to}
                 className={cn(
                   "flex min-h-11 items-center gap-3 rounded-2xl px-3 text-sm font-medium",
-                  path === n.to ? "bg-primary text-primary-foreground" : "text-foreground hover:bg-accent",
+                  path === n.to
+                    ? "bg-primary text-primary-foreground"
+                    : "text-foreground hover:bg-accent",
                 )}
               >
                 <n.icon className="size-4" /> {n.label}
@@ -133,12 +158,19 @@ export function AppShell({ title, subtitle, children }: { title: string; subtitl
           <header className="sticky top-0 z-20 border-b border-border bg-card/95 backdrop-blur lg:rounded-t-3xl lg:border lg:border-b-0">
             <div className="flex items-center gap-3 px-4 py-3">
               <Link to="/" className="shrink-0 lg:hidden">
-                <img src="/shilpsetu-logo.jpg" alt="ShilpSetu Logo" className="size-11 rounded-2xl object-cover" />
+                <img
+                  src="/shilpsetu-logo.jpg"
+                  alt="ShilpSetu Logo"
+                  className="size-11 rounded-2xl object-cover"
+                />
               </Link>
               <div className="min-w-0">
-                <h1 className="truncate font-display text-base font-bold text-foreground">{title}</h1>
+                <h1 className="truncate font-display text-base font-bold text-foreground">
+                  {title}
+                </h1>
                 <p className="truncate text-xs text-muted-foreground">
-                  {subtitle ?? (profile ? `${profile.name} · ${profile.village}` : "Artisan workspace")}
+                  {subtitle ??
+                    (profile ? `${profile.name} · ${profile.village}` : "Artisan workspace")}
                 </p>
               </div>
               <Link
@@ -158,7 +190,11 @@ export function AppShell({ title, subtitle, children }: { title: string; subtitl
 
           <div className="mt-4 hidden flex-wrap gap-2 px-4 lg:flex">
             {MORE.map((m) => (
-              <Link key={m.to} to={m.to} className="rounded-full border border-border px-3 py-1.5 text-xs">
+              <Link
+                key={m.to}
+                to={m.to}
+                className="rounded-full border border-border px-3 py-1.5 text-xs"
+              >
                 {m.label}
               </Link>
             ))}

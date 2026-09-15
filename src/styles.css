@@ -131,3 +131,16 @@
   border-radius: 999px;
   opacity: 0.5;
 }
+
+/* Accessibility: Bigger text & buttons mode */
+html.large-ui {
+  font-size: 115%;
+}
+
+html.large-ui button,
+html.large-ui input,
+html.large-ui select,
+html.large-ui textarea {
+  min-height: 3.25rem;
+  font-size: 1.05rem;
+}

@@ -3,7 +3,9 @@ import { cn } from "@/lib/utils";
 
 export function Card({ className, children }: { className?: string; children: ReactNode }) {
   return (
-    <div className={cn("rounded-3xl border border-border bg-card p-4 shadow-sm", className)}>{children}</div>
+    <div className={cn("rounded-3xl border border-border bg-card p-4 shadow-sm", className)}>
+      {children}
+    </div>
   );
 }
 
@@ -17,14 +19,24 @@ export function Stat({ label, value, hint }: { label: string; value: string; hin
   );
 }
 
-export function Pill({ tone = "muted", children }: { tone?: "muted" | "success" | "warn" | "primary"; children: ReactNode }) {
+export function Pill({
+  tone = "muted",
+  children,
+}: {
+  tone?: "muted" | "success" | "warn" | "primary";
+  children: ReactNode;
+}) {
   const tones = {
     muted: "bg-muted text-muted-foreground",
     success: "bg-success/15 text-success-ink",
     warn: "bg-marigold/30 text-marigold-foreground",
     primary: "bg-primary/12 text-primary",
   } as const;
-  return <span className={cn("rounded-full px-2.5 py-1 text-xs font-medium", tones[tone])}>{children}</span>;
+  return (
+    <span className={cn("rounded-full px-2.5 py-1 text-xs font-medium", tones[tone])}>
+      {children}
+    </span>
+  );
 }
 
 export function BigButton({

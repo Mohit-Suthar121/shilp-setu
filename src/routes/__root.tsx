@@ -86,7 +86,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "SHILPSETU" },
       { property: "og:title", content: "SHILPSETU" },
-      { property: "og:description", content: "Offline-first AI business manager for Indian artisans." },
+      {
+        property: "og:description",
+        content: "Offline-first AI business manager for Indian artisans.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
